@@ -23,6 +23,31 @@ function Main() {
     };
   }, []);
 
+  // ✅ 지점 목록
+  const branches = [
+    { name: "서울 강남점", url: "https://gangnam.lois.com" },
+    { name: "서울 신촌점", url: "https://sinchon.lois.com" },
+    { name: "서울 홍대점", url: "https://hongdae.lois.com" },
+    { name: "부산 서면점", url: "https://seomyeon.lois.com" },
+    { name: "부산 해운대점", url: "https://haeundae.lois.com" },
+    { name: "대구 동성로점", url: "https://dongseongro.lois.com" },
+    { name: "대전 둔산점", url: "https://dunsan.lois.com" },
+    { name: "광주 충장로점", url: "https://chungjangro.lois.com" },
+    { name: "울산 삼산점", url: "https://samsan.lois.com" },
+    { name: "인천 부평점", url: "https://bupyeong.lois.com" },
+    { name: "수원 영통점", url: "https://yeongtong.lois.com" },
+    { name: "고양 일산점", url: "https://ilsan.lois.com" },
+    { name: "성남 분당점", url: "https://bundang.lois.com" },
+    { name: "용인 수지점", url: "https://suji.lois.com" },
+    { name: "창원 상남점", url: "https://sangnam.lois.com" },
+    { name: "청주 성안점", url: "https://seongan.lois.com" },
+    { name: "전주 완산점", url: "https://wansan.lois.com" },
+    { name: "포항 중앙점", url: "https://jungang.lois.com" },
+    { name: "제주 노형점", url: "https://nohyeong.lois.com" },
+    { name: "강릉 교동점", url: "https://gyodong.lois.com" },
+    { name: "천안 불당점", url: "https://buldang.lois.com" },
+  ];
+
   return (
     <div className="main-container">
       <div className="main-header">
@@ -79,21 +104,24 @@ function Main() {
   <p>
     <span className="bold-text">로이스치과 네트워크</span> 바로가기
   </p>
-</section>
+  </section>
+   {/* ✅ 6개씩 배치하는 지점 리스트 */}
+   <section className="branch-container">
+
+          <div className="branch-list">
+            {branches.map((branch, index) => (
+              <div key={index} className="branch-card">
+                <p className="branch-name">{branch.name}</p>
+                <a className="branch-btn" href={branch.url} target="_blank" rel="noopener noreferrer">
+                  바로가기
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
 </section>
       </div>
       <div className="main-footer">
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
         <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
         
       </div>

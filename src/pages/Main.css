@@ -27,7 +27,7 @@
   position: relative;
   z-index: 1;
   background-color: white;
-  padding: 5vh 5vw; /* 반응형 패딩 */
+  padding: 17vh 17vw; /* 반응형 패딩 */
   margin-top: 9vh;
   max-width: 90vw;
   margin-left: auto;
@@ -70,7 +70,7 @@
 
 /* 섹션 제목 */
 .feature h2 {
-  font-size: 4.0vw; /* 반응형 크기 */
+  font-size: 3.3vw; /* 반응형 크기 */
   font-weight: bold;
   color: #856A29;
   text-align: left;
@@ -402,3 +402,57 @@
   font-weight: bold; /* "로이스치과 네트워크"에만 굵게 적용 */
 }
 
+.branch-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.branch-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ✅ 6개씩 가로로 배치 */
+.branch-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ✅ 각 지점 이름 (배경색 제거) */
+.branch-card {
+  width: 150px;
+  text-align: left;
+}
+
+/* ✅ 지점 이름 스타일 */
+.branch-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* ✅ 바로가기 버튼 (네모 상자 없애고, 텍스트 스타일로 변경) */
+.branch-btn {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #007bff;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ✅ 점선 스타일 */
+.branch-list::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px dashed #ccc;
+  margin: 20px 0;
+}
