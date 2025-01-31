@@ -1,7 +1,8 @@
-// App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./component/Header";
+import Footer from "./component/Footer";
+import Community from "./pages/Community";
 import Main from "./pages/Main";
 import "./App.css";
 
@@ -10,9 +11,13 @@ function App() {
     <Router>
       <div className="app">
         <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/community" element={<Community />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </Router>
   );
