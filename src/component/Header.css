@@ -1,14 +1,15 @@
-/* Header.css */
+/* 기본 스타일 */
 .Header {
-  display: flex; /* Flexbox로 설정 */
-  align-items: center; /* 세로로 가운데 정렬 */
-  justify-content: flex-start; /* 항목들을 왼쪽에 정렬 */
-  padding: 30px 50px; /* 위아래 간격을 넓히기 위해 패딩을 30px로 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+  padding: 3vh 5vw; /* 반응형 패딩 */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent; /* 처음에는 투명 배경 */
+  background: transparent;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -20,43 +21,92 @@
 
 /* 로고 스타일 */
 .Header .logo {
-  width: 250px; /* 로고의 가로 크기 설정 */
-  height: auto; /* 로고의 세로 크기는 자동으로 맞추기 */
-  margin-left: 80px;
-  margin-right: 1100px; /* 로고와 텍스트 간 간격을 넓히기 */
+  width: 15vw; /* 반응형 크기 */
+  max-width: 200px; /* 너무 커지는 걸 방지 */
+  height: auto;
+  margin-left: 5vw;
+  margin-right: auto;
 }
 
 /* 메뉴 스타일 */
-.Header .introduce,
-.Header .findPlace,
-.Header .special,
-.Header .manageCenter,
-.Header .tv,
-.Header .community {
-  font-size: 20px;
+.Header nav {
+  display: flex;
+  flex-wrap: wrap; /* 화면이 작아질 때 자동 줄바꿈 */
+  gap: 2vw; /* 반응형 간격 */
+}
+
+/* 개별 메뉴 스타일 */
+.Header .menu-item {
+  font-size: 1.2rem; /* 반응형 폰트 크기 */
   color: white;
-  margin-right: 30px; /* 항목들 간 간격 설정 */
   font-weight: bold;
-  cursor: pointer; /* 클릭 가능한 요소처럼 보이게 */
+  cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
 /* 호버 시 색상 변경 */
-.Header .introduce:hover,
-.Header .findPlace:hover,
-.Header .special:hover,
-.Header .tv:hover,
-.Header .manageCenter:hover,
-.Header .community:hover {
-  color: #3498db; /* 호버 시 파란색으로 변경 */
+.Header .menu-item:hover {
+  color: #3498db;
 }
 
 /* 스크롤 시 글씨 색 변경 */
-.Header.scrolled .introduce,
-.Header.scrolled .findPlace,
-.Header.scrolled .special,
-.Header.scrolled .manageCenter,
-.Header.scrolled .tv,
-.Header.scrolled .community {
+.Header.scrolled .menu-item {
   color: black;
+}
+
+/* 📌 반응형 미디어 쿼리 */
+@media (max-width: 1024px) {
+  .Header {
+    padding: 2vh 4vw;
+  }
+
+  .Header .logo {
+    width: 20vw;
+    max-width: 150px;
+  }
+
+  .Header .menu-item {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Header .logo {
+    margin: 0 auto;
+  }
+
+  .Header nav {
+    justify-content: center;
+    gap: 4vw;
+  }
+
+  .Header .menu-item {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Header {
+    padding: 2vh 3vw;
+  }
+
+  .Header .logo {
+    width: 25vw;
+    max-width: 120px;
+  }
+
+  .Header nav {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .Header .menu-item {
+    font-size: 0.9rem;
+  }
 }
