@@ -1,0 +1,108 @@
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* 높이를 100%로 설정하여 스크롤이 가능하도록 합니다. */
+}
+
+.main-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.welcome-video {
+  position: absolute;
+  top: -1.9%; /* 비디오가 상단에서 조금 내려가게 */
+  left: 0;
+  width: 100%;
+  height: 110%; /* 높이를 120%로 설정하여 비디오가 화면에 꽉 차도록 */
+  object-fit: cover; /* 비디오 비율 유지 */
+  z-index: -1; /* 비디오가 다른 콘텐츠 뒤에 오도록 */
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  background-color: white; /* 배경 추가 */
+  padding: 50px;
+  margin-top: 9vh; /* 기존 100vh에서 80vh로 줄여 간격 축소 */
+  max-width: 1100px; /* 컨텐츠의 최대 너비 설정 */
+  margin-left: 350px;
+  margin-right: 350px;
+}
+
+
+.text-overlay {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  text-align: right;
+  z-index: 2;
+  line-height: 1.3; /* 문장 간 간격을 최소화 */
+}
+
+.text-overlay h1 {
+  margin: 0; /* 문장 간 여백 제거 */
+  padding: 0; /* 패딩도 없애서 간격 최소화 */
+}
+
+.blue-text {
+  color: #3498db;
+}
+
+.feature h2 {
+  font-size: 72px; /* 글씨 크기 키우기 */
+  font-weight: bold;
+  color: #856A29; /* 진한 금색 */
+  text-align: left; /* 오른쪽 정렬 */
+  margin-bottom: 10px; /* 문장 간 여백 */
+  position: relative; /* 밑줄을 위한 기준 위치 */
+  display: inline-block; /* 밑줄 크기를 텍스트에 맞추기 위해 설정 */
+  line-height: 1.3; /* 줄 간격 조절 */
+}
+
+/* 밑줄 스타일 */
+.feature h2::after {
+  content: "";
+  display: block;
+  width: 235%; /* 글씨 길이에 맞게 */
+  height: 3px; /* 선 두께 */
+  background-color: #B8860B; /* 진한 금색 */
+  margin-top: 5px; /* 글씨와 선 사이 간격 */
+}
+
+/* Main.css */
+
+/* 텍스트 섹션 기본 스타일 */
+.text-section p {
+  margin: 0;
+  opacity: 0; /* 초기 상태에서 투명하게 */
+  transform: translateY(20px); /* 화면 아래로 내려서 초기 위치 설정 */
+  transition: all 0.5s ease-out; /* 스크롤 시 자연스럽게 모션 효과 */
+}
+
+/* visible 클래스가 추가되면 모션 적용 */
+.text-section.visible p {
+  opacity: 1;
+  transform: translateY(0); /* 스크롤 시 올라오면서 보이도록 */
+}
+
+/* 첫 번째와 두 번째 문단 스타일 (검은색, 크기 키우기) */
+.text-section .highlight-text {
+  font-size: 60px;  /* 글씨 크기 키우기 */
+  color: black;  /* 검은색 */
+  font-weight: bold;  /* 글씨 굵게 */
+}
+
+/* 세 번째 문단 스타일 (작은 글씨, 갈색) */
+.text-section .small-text {
+  font-size: 48px;  /* 글씨 크기 작게 */
+  color: #B8860B;  /* 조금 진한 갈색 */
+  font-weight: normal;  /* 글씨 굵기 보통 */
+  font-weight: bold;  /* 글씨 굵게 */
+}

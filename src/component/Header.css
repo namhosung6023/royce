@@ -1,0 +1,62 @@
+/* Header.css */
+.Header {
+  display: flex; /* Flexbox로 설정 */
+  align-items: center; /* 세로로 가운데 정렬 */
+  justify-content: flex-start; /* 항목들을 왼쪽에 정렬 */
+  padding: 30px 50px; /* 위아래 간격을 넓히기 위해 패딩을 30px로 설정 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent; /* 처음에는 투명 배경 */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* 스크롤 시 배경색 변경 */
+.Header.scrolled {
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 로고 스타일 */
+.Header .logo {
+  width: 250px; /* 로고의 가로 크기 설정 */
+  height: auto; /* 로고의 세로 크기는 자동으로 맞추기 */
+  margin-left: 80px;
+  margin-right: 1100px; /* 로고와 텍스트 간 간격을 넓히기 */
+}
+
+/* 메뉴 스타일 */
+.Header .introduce,
+.Header .findPlace,
+.Header .special,
+.Header .manageCenter,
+.Header .tv,
+.Header .community {
+  font-size: 20px;
+  color: white;
+  margin-right: 30px; /* 항목들 간 간격 설정 */
+  font-weight: bold;
+  cursor: pointer; /* 클릭 가능한 요소처럼 보이게 */
+  transition: color 0.3s ease-in-out;
+}
+
+/* 호버 시 색상 변경 */
+.Header .introduce:hover,
+.Header .findPlace:hover,
+.Header .special:hover,
+.Header .tv:hover,
+.Header .manageCenter:hover,
+.Header .community:hover {
+  color: #3498db; /* 호버 시 파란색으로 변경 */
+}
+
+/* 스크롤 시 글씨 색 변경 */
+.Header.scrolled .introduce,
+.Header.scrolled .findPlace,
+.Header.scrolled .special,
+.Header.scrolled .manageCenter,
+.Header.scrolled .tv,
+.Header.scrolled .community {
+  color: black;
+}
