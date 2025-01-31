@@ -1,0 +1,107 @@
+.community-wrap {
+    text-align: left; /* 왼쪽 정렬 */
+    color: white;
+    background-color: #0D0D1F;
+    padding: 2rem;
+    display: block; 
+    margin-top: 15vh;
+}
+
+.community-contents{
+    max-width: 900px;
+    display: block; 
+    margin-left: 35vh;
+    margin-top: 6vh;
+}
+.contact-us {
+    font-size: 3.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    
+}
+
+.color-context{
+    color: #856A29;
+}
+
+.color-context, .mid-context {
+    font-size: 2.2rem;
+    margin: 0.3rem 0;
+    font-weight: bold;
+}
+
+.email-context{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* 폼 스타일 */
+.contact-form {
+    max-width: 100%;
+    padding: 1.rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 10vh;
+}
+
+.contact-form label {
+    font-size: 1.2rem;
+    display: block; /* 왼쪽 정렬 */
+    
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.6rem 0; /* 상하 패딩만 주어 밑줄이 돋보이게 합니다 */
+    border: none;
+    border-bottom: 2px solid #ccc; /* 밑줄만 보이도록 설정 */
+    font-size: 1rem;
+    background: #121220;
+    color: white;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-bottom: 2px solid #fff; /* 포커스 시 밑줄 색상 변경 */
+    outline: none; /* 기본 포커스 아웃라인 제거 */
+}
+
+
+.contact-form .phone-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.contact-form .phone-input input {
+    flex: 1;
+    text-align: center;
+}
+
+
+.contact-form button {
+    background-color: #0D0D1F;
+    color: white;
+    padding: 1.2em;
+    border:1px solid white;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center; /* 왼쪽 정렬 */
+    margin-bottom: 20vh;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: #0D0D1F;
+    transition:border-color 0.5s, background-color 0.5s;
+}
+
+.required {
+    color: red;
+    margin-left: 0.3rem;
+}
