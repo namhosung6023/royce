@@ -37,16 +37,16 @@
 /* 텍스트 오버레이 */
 .text-overlay {
   position: absolute;
-  top: 55%;
-  left: 25%;
+  top: 70%;
+  left: 20%; /* 왼쪽으로 이동 */
   transform: translateY(-50%);
   color: white;
-  font-size: 3vw; /* 반응형 크기 */
+  font-size: 2.1vw; /* 반응형 크기 */
   font-weight: bold;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-  text-align: right;
+  text-align: right; /* 텍스트 정렬을 왼쪽으로 */
   z-index: 2;
-  line-height: 1.3;
+  line-height: 1.1; /* 문장 간의 간격을 줄임 */
 }
 
 .text-overlay h1 {
@@ -54,13 +54,23 @@
   padding: 0;
 }
 
-.blue-text {
-  color: #3498db;
+/* 각 문장 */
+.text-overlay .highlight-text1 {
+  font-size: 2vw;
+  color: black;
+  font-weight: bold;
 }
+
+.text-overlay .blue-text {
+  font-size: 3.9vw;
+  color: #3498db; /* 파란색 */
+  font-weight: bold;
+}
+
 
 /* 섹션 제목 */
 .feature h2 {
-  font-size: 5vw; /* 반응형 크기 */
+  font-size: 4.0vw; /* 반응형 크기 */
   font-weight: bold;
   color: #856A29;
   text-align: left;
@@ -74,10 +84,11 @@
 .feature h2::after {
   content: "";
   display: block;
-  width: 100%;
+  width: 264%;
   height: 3px;
   background-color: #B8860B;
   margin-top: 5px;
+  margin-bottom: 7.2%;
 }
 
 /* 텍스트 섹션 애니메이션 */
@@ -95,7 +106,7 @@
 
 /* 첫 번째, 두 번째 문단 (검은색) */
 .text-section .highlight-text {
-  font-size: 4vw; /* 반응형 크기 */
+  font-size: 3.5vw; /* 반응형 크기 */
   color: black;
   font-weight: bold;
 }
@@ -111,7 +122,19 @@
 @media (max-width: 1024px) {
   .text-overlay {
     font-size: 3.5vw;
-    left: 20%;
+    left: 10%;
+  }
+
+  .text-overlay .highlight-text1 {
+    font-size: 3.5vw;
+  }
+
+  .text-overlay .highlight-text2 {
+    font-size: 3vw;
+  }
+
+  .text-overlay .highlight-text3 {
+    font-size: 3.2vw;
   }
 
   .feature h2 {
@@ -130,7 +153,7 @@
 @media (max-width: 768px) {
   .text-overlay {
     font-size: 3vw;
-    left: 15%;
+    left: 8%;
     text-align: center;
   }
 
@@ -156,7 +179,7 @@
 @media (max-width: 480px) {
   .text-overlay {
     font-size: 2.5vw;
-    left: 10%;
+    left: 5%;
     text-align: center;
   }
 
@@ -176,3 +199,206 @@
     font-size: 2vw;
   }
 }
+
+/* 기본 텍스트 정렬 왼쪽 */
+.text-section, .text-section2, .text-section3 {
+  text-align: left;
+}
+
+/* 잘하는 치과 어디갈지 찾고 계시나요? */
+.text-section2 .highlight-text1 {
+  font-size: 2.5vw;
+  color: black;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  margin-bottom: -5vh; /* 문장 간의 간격을 줄임 */
+}
+
+.text-section2.visible .highlight-text1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 이제 서울까지 가지 마세요! */
+.text-section3 .highlight-text2 {
+  font-size: 2.2vw;
+  font-weight: bold;
+  color: #B8860B;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  margin-bottom: -5vh; /* 문장 간의 간격을 줄임 */
+}
+
+.text-section3.visible .highlight-text2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 가까운 곳에서 서울 이상의 진료를 만날 수 있습니다 */
+.text-section3 .highlight-text3 {
+  font-size: 2.3vw;
+  font-weight: bold;
+  color: black;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  margin-bottom: -1vh; /* 문장 간의 간격을 줄임 */
+}
+
+.text-section3.visible .highlight-text3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📌 반응형 미디어 쿼리 */
+@media (max-width: 1024px) {
+  .text-section2 .highlight-text1 {
+    font-size: 4.5vw;
+  }
+  .text-section3 .highlight-text2 {
+    font-size: 4vw;
+  }
+  .text-section3 .highlight-text3 {
+    font-size: 3.8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-section2 .highlight-text1 {
+    font-size: 4vw;
+  }
+  .text-section3 .highlight-text2 {
+    font-size: 3.8vw;
+  }
+  .text-section3 .highlight-text3 {
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-section2 .highlight-text1 {
+    font-size: 3.5vw;
+  }
+  .text-section3 .highlight-text2 {
+    font-size: 3.5vw;
+  }
+  .text-section3 .highlight-text3 {
+    font-size: 3.2vw;
+  }
+}
+
+
+/* ✅ 새로운 텍스트 섹션 스타일 */
+.text-section4 {
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  margin-bottom: -5vh; /* 문장 간의 간격을 줄임 */
+}
+
+.text-section4.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ 첫 번째 문장 (갈색, 굵게) */
+.text-section4 .highlight-text4 {
+  font-size: 1.3vw;
+  font-weight: bold;
+  color: #856A29;
+  margin-bottom: -2vh; /* 문장 간의 간격을 줄임 */
+}
+
+/* ✅ 두 번째 문장 (검은색, 굵기 일반) */
+.text-section4 .normal-text {
+  font-size: 1.3vw;
+  color: black;
+  font-weight: bold;
+  margin-bottom: -2vh; /* 문장 간의 간격을 줄임 */
+}
+
+/* ✅ 세 번째 문장 (검은색, 굵게) */
+.text-section4 .bold-text {
+  font-size: 1.3vw;
+  color: black;
+  margin-bottom: -2.5vh; /* 문장 간의 간격을 줄임 */
+}
+
+/* ✅ 마지막 문장 (갈색, 굵게) */
+.text-section4 .last-text {
+  font-size: 1.3vw;
+  font-weight: bold;
+  color: #705C2D;
+  margin-bottom: 1.5vh; /* 문장 간의 간격을 줄임 */
+  border-bottom: 1px solid #B8860B; /* 선의 두께를 얇게 조정 */
+  padding-bottom: 4.5vh; /* 선과 글자 간의 간격을 조정 */
+}
+
+.text-section4.visible .last-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* 📌 반응형 미디어 쿼리 */
+@media (max-width: 1024px) {
+  .text-section4 .highlight-text4 {
+    font-size: 4vw;
+  }
+  .text-section4 .normal-text {
+    font-size: 3.8vw;
+  }
+  .text-section4 .bold-text {
+    font-size: 3.8vw;
+  }
+  .text-section4 .last-text {
+    font-size: 3.8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-section4 .highlight-text4 {
+    font-size: 3.8vw;
+  }
+  .text-section4 .normal-text {
+    font-size: 3.5vw;
+  }
+  .text-section4 .bold-text {
+    font-size: 3.5vw;
+  }
+  .text-section4 .last-text {
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-section4 .highlight-text4 {
+    font-size: 3.5vw;
+  }
+  .text-section4 .normal-text {
+    font-size: 3.2vw;
+  }
+  .text-section4 .bold-text {
+    font-size: 3.2vw;
+  }
+  .text-section4 .last-text {
+    font-size: 3.2vw;
+  }
+}
+
+/* place-text 스타일 */
+.place-text {
+  margin-top: 1.5vh;
+}
+
+.place-text p {
+  font-size: 1.4vw;
+}
+
+.bold-text {
+  font-weight: bold; /* "로이스치과 네트워크"에만 굵게 적용 */
+}
+
