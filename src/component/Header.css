@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
-  padding: 3vh 5vw; /* 반응형 패딩 */
+  padding: 3.3vh 5vw; /* 패딩을 줄여서 로고와 메뉴 간격을 줄임 */
   position: fixed;
   top: 0;
   left: 0;
@@ -21,92 +21,129 @@
 
 /* 로고 스타일 */
 .Header .logo {
-  width: 15vw; /* 반응형 크기 */
-  max-width: 200px; /* 너무 커지는 걸 방지 */
+  width: 100vw; /* 로고 크기를 조금 줄여서 간격을 좁힘 */
+  max-width: 300px;
   height: auto;
-  margin-left: 5vw;
-  margin-right: auto;
+  margin-left: 0.5vw; /* 로고의 왼쪽 간격 줄이기 */
+  margin-right: 28vw; /* 로고의 오른쪽 간격 줄이기 */
 }
 
 /* 메뉴 스타일 */
-.Header nav {
+.Header .menu {
   display: flex;
-  flex-wrap: wrap; /* 화면이 작아질 때 자동 줄바꿈 */
-  gap: 2vw; /* 반응형 간격 */
+  flex-wrap: wrap;
+  gap: 2vw; /* 메뉴 항목 간 간격을 적당히 넓힘 */
+  align-items: center; /* 메뉴 항목들을 수평 정렬 */
 }
 
-/* 개별 메뉴 스타일 */
-.Header .menu-item {
-  font-size: 1.2rem; /* 반응형 폰트 크기 */
+/* 개별 메뉴 항목 스타일 */
+.Header .introduce,
+.Header .special,
+.Header .manageCenter,
+.Header .tv,
+.Header .community {
+  font-size: 1.3rem; /* 메뉴 항목 크기 */
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  margin-right: 1.5vw; /* 메뉴 항목 간 간격을 더 넓힘 */
 }
 
 /* 호버 시 색상 변경 */
-.Header .menu-item:hover {
+.Header .introduce:hover,
+.Header .special:hover,
+.Header .manageCenter:hover,
+.Header .tv:hover,
+.Header .community:hover {
   color: #3498db;
 }
 
 /* 스크롤 시 글씨 색 변경 */
-.Header.scrolled .menu-item {
+.Header.scrolled .introduce,
+.Header.scrolled .special,
+.Header.scrolled .manageCenter,
+.Header.scrolled .tv,
+.Header.scrolled .community {
   color: black;
 }
 
 /* 📌 반응형 미디어 쿼리 */
+
+/* 1024px 이하 */
 @media (max-width: 1024px) {
   .Header {
-    padding: 2vh 4vw;
+    padding: 2vh 4vw; /* 패딩 조정 */
   }
 
   .Header .logo {
-    width: 20vw;
-    max-width: 150px;
+    width: 30vw; /* 로고 크기 줄이기 */
+    max-width: 250px; /* 최대 크기 제한 */
+    margin-left: 2vw; /* 로고 왼쪽 간격 줄이기 */
+    margin-right: 20vw; /* 로고 오른쪽 간격 줄이기 */
   }
 
-  .Header .menu-item {
-    font-size: 1rem;
+  .Header .menu {
+    gap: 4vw; /* 메뉴 항목 간격 넓힘 */
+  }
+
+  .Header .introduce,
+  .Header .special,
+  .Header .manageCenter,
+  .Header .tv,
+  .Header .community {
+    font-size: 1.1rem; /* 폰트 크기 줄이기 */
   }
 }
 
+/* 768px 이하 */
 @media (max-width: 768px) {
   .Header {
-    flex-direction: column;
+    flex-direction: column; /* 메뉴를 세로로 배치 */
     align-items: center;
-    text-align: center;
+    padding: 3vh 4vw; /* 패딩 조정 */
   }
 
   .Header .logo {
-    margin: 0 auto;
+    width: 40vw; /* 로고 크기 더 줄이기 */
+    max-width: 200px; /* 최대 크기 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
   }
 
-  .Header nav {
-    justify-content: center;
-    gap: 4vw;
+  .Header .menu {
+    flex-direction: column; /* 메뉴 항목 세로로 정렬 */
+    gap: 3vh; /* 메뉴 항목 간격 조정 */
   }
 
-  .Header .menu-item {
-    font-size: 1rem;
+  .Header .introduce,
+  .Header .special,
+  .Header .manageCenter,
+  .Header .tv,
+  .Header .community {
+    font-size: 1rem; /* 폰트 크기 더 줄이기 */
   }
 }
 
+/* 480px 이하 */
 @media (max-width: 480px) {
   .Header {
-    padding: 2vh 3vw;
+    padding: 2vh 3vw; /* 패딩 조정 */
   }
 
   .Header .logo {
-    width: 25vw;
-    max-width: 120px;
+    width: 50vw; /* 로고 크기 더 줄이기 */
+    max-width: 150px; /* 최대 크기 제한 */
   }
 
-  .Header nav {
-    flex-direction: column;
-    gap: 2vh;
+  .Header .menu {
+    gap: 2vh; /* 메뉴 항목 간격 줄이기 */
   }
 
-  .Header .menu-item {
-    font-size: 0.9rem;
+  .Header .introduce,
+  .Header .special,
+  .Header .manageCenter,
+  .Header .tv,
+  .Header .community {
+    font-size: 0.9rem; /* 폰트 크기 더 줄이기 */
   }
 }

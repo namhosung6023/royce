@@ -1,9 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import royceLogo from "../images/royce.png";
+import icon1 from "../images/install.png";
+import icon2 from "../images/blog.png";
+import icon3 from "../images/you.png";
+import talk from "../images/talk.png";
 import "./Main.css";
 
 function Main() {
+  const [showIcons, setShowIcons] = useState(false);  // 아이콘 보이기/숨기기 상태
+
+  const handleLogoClick = () => {
+    setShowIcons(!showIcons);
+  };
+  
+
   const handleScroll = () => {
-    const sections = document.querySelectorAll(".text-section, .text-section2, .text-section3, .text-section4"); // ✅ 추가
+    const sections = document.querySelectorAll(".text-section, .text-section2, .text-section3, .text-section4");
     sections.forEach((element) => {
       const rect = element.getBoundingClientRect();
       if (rect.top >= 0 && rect.top <= window.innerHeight * 0.6) {
@@ -23,29 +35,28 @@ function Main() {
     };
   }, []);
 
-  // ✅ 지점 목록
   const branches = [
-    { name: "서울 강남점", url: "https://gangnam.lois.com" },
-    { name: "서울 신촌점", url: "https://sinchon.lois.com" },
-    { name: "서울 홍대점", url: "https://hongdae.lois.com" },
-    { name: "부산 서면점", url: "https://seomyeon.lois.com" },
-    { name: "부산 해운대점", url: "https://haeundae.lois.com" },
-    { name: "대구 동성로점", url: "https://dongseongro.lois.com" },
-    { name: "대전 둔산점", url: "https://dunsan.lois.com" },
-    { name: "광주 충장로점", url: "https://chungjangro.lois.com" },
-    { name: "울산 삼산점", url: "https://samsan.lois.com" },
-    { name: "인천 부평점", url: "https://bupyeong.lois.com" },
-    { name: "수원 영통점", url: "https://yeongtong.lois.com" },
-    { name: "고양 일산점", url: "https://ilsan.lois.com" },
-    { name: "성남 분당점", url: "https://bundang.lois.com" },
-    { name: "용인 수지점", url: "https://suji.lois.com" },
-    { name: "창원 상남점", url: "https://sangnam.lois.com" },
-    { name: "청주 성안점", url: "https://seongan.lois.com" },
-    { name: "전주 완산점", url: "https://wansan.lois.com" },
-    { name: "포항 중앙점", url: "https://jungang.lois.com" },
-    { name: "제주 노형점", url: "https://nohyeong.lois.com" },
-    { name: "강릉 교동점", url: "https://gyodong.lois.com" },
-    { name: "천안 불당점", url: "https://buldang.lois.com" },
+    { name: "로이스 덕영대구점", url: "https://roycedental-masan.com/" },
+    { name: "로이스 대구점", url: "http://www.doctorsdental.co.kr/html/main/index.html" },
+    { name: "로이스 CK울산점", url: "https://ckdental.co.kr/" },
+    { name: "로이스 영천점", url: "https://doctorsdental-yeongcheon.co.kr/default/" },
+    { name: "로이스 경주점", url: "http://www.doctorsdental-gyeongju.co.kr/" },
+    { name: "로이스 서울김해점", url: "http://roycedental-gimhae.com/" },
+    { name: "로이스 마산점", url: "https://roycedental-masan.com/" },
+    { name: "로이스 밀양점", url: "http://mysoodent.co.kr/" },
+    { name: "로이스 제일안동점", url: "https://andong1st.com/default/" },
+    { name: "로이스 제천점", url: "https://m.booking.naver.com/booking/13/bizes/433083/items/3654575?startDate=2025-01-29" },
+    { name: "로이스 영천점", url: "https://doctorsdental-yeongcheon.co.kr/default/" },
+    { name: "로이스 진주점", url: "https://www.roycedental-jinju.com/html/main/index.html" },
+    { name: "로이스 창원점", url: "" },
+    { name: "로이스 포항죽도점", url: "https://im-plant.co.kr/" },
+    { name: "로이스 포항오천점", url: "https://roycedental-pohangocheon.com/" },
+    { name: "로이스 구제주점", url: "http://roycedental-jejuido2dong.com/html/main/index.html" },
+    { name: "로이스 신제주점", url: "https://leadm12.cafe24.com/" },
+    { name: "로이스 여수점", url: "https://roycedental-yeosu.com/" },
+    { name: "로이스 수원점", url: "http://www.suwon-1st.com/html/main/" },
+    { name: "로이스 호치민점", url: "https://roycedental-vn.com/" },
+    { name: "로이스 싱가폴점", url: "" },
   ];
 
   return (
@@ -55,6 +66,9 @@ function Main() {
           <source src="/videos/mainVideo.mp4" type="video/mp4" />
           브라우저가 동영상을 지원하지 않습니다.
         </video>
+        <div className="logo-overlay" onClick={handleLogoClick}>
+          <img src={royceLogo} alt="Royce Logo" className="logo" />
+        </div>
         <div className="text-overlay">
           <h1>신뢰할 수 있는 치료와</h1>
           <h1>
@@ -66,6 +80,30 @@ function Main() {
           </h1>
         </div>
       </div>
+      <div className="logo-overlay talk-logo" onClick={handleLogoClick}>
+  <img src={talk} alt="Talk Icon" className="logo" />
+  <div className="speech-bubble">
+    <span className="dot"></span>
+    <span className="dot"></span>
+    <span className="dot"></span>
+  </div>
+</div>
+
+{/* 아이콘이 보일 때 나타나는 섹션 */}
+{showIcons && (
+  <div className={`icons-container ${showIcons ? "show" : ""}`}>
+    <a href="https://www.instagram.com/royce.dental?igsh=NXd5aTFsZG05MzZ5" target="_blank" rel="noopener noreferrer" className="icon">
+      <img src={icon1} alt="설치 안내" className="icon-img" />
+    </a>
+    <a href="https://blog.naver.com/gripia84" target="_blank" rel="noopener noreferrer" className="icon">
+      <img src={icon2} alt="블로그" className="icon-img" />
+    </a>
+    <a href="https://www.youtube.com/@royce-dental-kr/videos" target="_blank" rel="noopener noreferrer" className="icon">
+      <img src={icon3} alt="유튜브" className="icon-img" />
+    </a>
+  </div>
+)}
+
       <div className="main-content">
         <section className="feature">
           <h2>
@@ -86,44 +124,65 @@ function Main() {
           <p className="highlight-text3">가까운 곳에서 서울 이상의 진료를 만날 수 있습니다.</p>
         </section>
         <br />
-        {/* ✅ 새로운 문단 추가 */}
         <section className="text-section4">
-  <p className="highlight-text4">
-    이제 나에게 가까운 도시에서 안심하고 진료 받을 수 있습니다.
-  </p>
-  <p className="normal-text">
-    로이스치과의 전문의가 대학병원 수준의 최신 진료 장비와 최신 치료법으로 직접 상담부터 진료까지 책임집니다.
-  </p>
-  <p className="bold-text">
-    고객이 어디에 있든, 더 편리하고, 더 전문적으로 전국 통합 관리 시스템으로 끊김 없는 구강 케어를 제공합니다.
-  </p>
-  <p className="last-text">
-    지방에서도 믿을 수 있는 진료, 통합 관리는 로이스치과라 가능합니다.
-  </p>
-  <section className="place-text">
-  <p>
-    <span className="bold-text">로이스치과 네트워크</span> 바로가기
-  </p>
-  </section>
-   {/* ✅ 6개씩 배치하는 지점 리스트 */}
-   <section className="branch-container">
-
+          <p className="highlight-text4">
+            이제 나에게 가까운 도시에서 안심하고 진료 받을 수 있습니다.
+          </p>
+          <p className="normal-text">
+            로이스치과의 전문의가 대학병원 수준의 최신 진료 장비와 최신 치료법으로 직접 상담부터 진료까지 책임집니다.
+          </p>
+          <p className="bold-text">
+            고객이 어디에 있든, 더 편리하고, 더 전문적으로 전국 통합 관리 시스템으로 끊김 없는 구강 케어를 제공합니다.
+          </p>
+          <p className="last-text">
+            지방에서도 믿을 수 있는 진료, 통합 관리는 로이스치과라 가능합니다.
+          </p>
+          <section className="place-text">
+            <p>
+              <span className="bold-text">로이스치과 네트워크</span> 바로가기
+            </p>
+          </section>
+        </section>
+        <section className="branch-container">
           <div className="branch-list">
-            {branches.map((branch, index) => (
-              <div key={index} className="branch-card">
-                <p className="branch-name">{branch.name}</p>
-                <a className="branch-btn" href={branch.url} target="_blank" rel="noopener noreferrer">
-                  바로가기
-                </a>
-              </div>
-            ))}
+            {branches.map((branch, index) => {
+              const branchParts = branch.name.split(" ");
+              const prefix = branchParts[0];
+              const boldPart = branchParts.slice(1).join(" ");
+
+              return (
+                <React.Fragment key={index}>
+                  <div className="branch-card">
+                    <p className="branch-name">
+                      <span className="branch-prefix">{prefix} </span>
+                      <span className="branch-bold">{boldPart}</span>
+                    </p>
+                    <a className="branch-btn" href={branch.url} target="_blank" rel="noopener noreferrer">
+                      바로가기
+                    </a>
+                  </div>
+                  {(index + 1) % 6 === 0 && <hr className="dotted-line" />}
+                </React.Fragment>
+              );
+            })}
           </div>
         </section>
-</section>
+        <div className="video-container">
+          <video className="branch-video" autoPlay muted loop>
+            <source src="/videos/main1.mp4" type="video/mp4" />
+            브라우저가 동영상을 지원하지 않습니다.
+          </video>
+        </div>
+        <div className="video-description">
+  <p className="intro-text">20개 로이스치과 네트워크, 하나의 시스템으로 통합 관리!</p>
+  <p className="service-text">
+    통합 A/S 및 관리로 더 빠르고 혁신적인 서비스를 제공하는, 
+    <span className="highlight-text">믿을 수 있는 주치의치과</span> 입니다.
+  </p>
+</div>
       </div>
       <div className="main-footer">
         <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-        
       </div>
     </div>
   );
