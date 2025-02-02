@@ -612,6 +612,80 @@
   color: #856A29; /* 강조된 부분에 색상 적용 */
 }
 
+.second {
+  background-color: #0D0D1F;
+  color: #856A29; /* 전체 글씨 색상 */
+  font-size: 24px; /* 원하는 크기로 조정 */
+  height: 800px;
+}
+
+.second-content {
+  display: inline-block;
+  color: #856A29;
+  font-size: 22px;
+  padding: 0 130px; /* 양옆 여백 추가 */
+  margin-top: 5%;
+  
+}
+
+.second-title {
+  color: white;
+  font-size: 36px;
+  margin-top: 10px; /* 기존 30px → 10px로 줄임 */
+  margin-bottom: 5px; /* 문장 간격 조절 */
+  opacity: 0;
+  transform: translateY(50px); /* 아래에서 올라오는 효과 */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 스크롤 시 visible 상태 */
+.second-title.visible {
+  opacity: 1;
+  transform: translateY(0); /* 원래 위치로 돌아옴 */
+}
+
+/* 스크롤 시 visible 상태 */
+.second-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0); /* 원래 위치로 돌아옴 */
+}
+
+.second-subtitle {
+  font-size: 42px; /* 기존 48px → 42px로 줄여서 균형 조정 */
+  margin-top: 0px; /* 기존 5px → 0px로 줄여서 밀착 */
+  color: white;
+  opacity: 0;
+  transform: translateY(50px); /* 아래에서 올라오는 효과 */
+  transition: opacity 1s ease, transform 1s ease;
+  
+}
+
+.highlight-text {
+  color: #856A29; /* #856A29 색깔 */
+  font-weight: bold;
+}
+
+.bold-royce {
+  font-weight: bold; /* ROYCE만 굵게 */
+}
+
+.second-bold{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.second-test{
+  color: white;
+  font-size: 22px;
+}
+
+.royce-tv{
+  color: #828281;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 
 
 

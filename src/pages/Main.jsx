@@ -12,10 +12,10 @@ function Main() {
   const handleLogoClick = () => {
     setShowIcons(!showIcons);
   };
-  
 
+  // 스크롤 이벤트 처리
   const handleScroll = () => {
-    const sections = document.querySelectorAll(".text-section, .text-section2, .text-section3, .text-section4");
+    const sections = document.querySelectorAll(".text-section, .text-section2, .text-section3, .text-section4, .second-title, .second-subtitle");
     sections.forEach((element) => {
       const rect = element.getBoundingClientRect();
       if (rect.top >= 0 && rect.top <= window.innerHeight * 0.6) {
@@ -25,6 +25,15 @@ function Main() {
       }
     });
   };
+
+  // 스크롤 시 애니메이션 실행
+window.addEventListener('scroll', function () {
+  const secondContent = document.querySelector('.second-content');
+  
+  if (secondContent.getBoundingClientRect().top <= window.innerHeight) {
+    secondContent.classList.add('visible');
+  }
+});
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -81,28 +90,28 @@ function Main() {
         </div>
       </div>
       <div className="logo-overlay talk-logo" onClick={handleLogoClick}>
-  <img src={talk} alt="Talk Icon" className="logo" />
-  <div className="speech-bubble">
-    <span className="dot"></span>
-    <span className="dot"></span>
-    <span className="dot"></span>
-  </div>
-</div>
+        <img src={talk} alt="Talk Icon" className="logo" />
+        <div className="speech-bubble">
+          <span className="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+        </div>
+      </div>
 
-{/* 아이콘이 보일 때 나타나는 섹션 */}
-{showIcons && (
-  <div className={`icons-container ${showIcons ? "show" : ""}`}>
-    <a href="https://www.instagram.com/royce.dental?igsh=NXd5aTFsZG05MzZ5" target="_blank" rel="noopener noreferrer" className="icon">
-      <img src={icon1} alt="설치 안내" className="icon-img" />
-    </a>
-    <a href="https://blog.naver.com/gripia84" target="_blank" rel="noopener noreferrer" className="icon">
-      <img src={icon2} alt="블로그" className="icon-img" />
-    </a>
-    <a href="https://www.youtube.com/@royce-dental-kr/videos" target="_blank" rel="noopener noreferrer" className="icon">
-      <img src={icon3} alt="유튜브" className="icon-img" />
-    </a>
-  </div>
-)}
+      {/* 아이콘이 보일 때 나타나는 섹션 */}
+      {showIcons && (
+        <div className={`icons-container ${showIcons ? "show" : ""}`}>
+          <a href="https://www.instagram.com/royce.dental?igsh=NXd5aTFsZG05MzZ5" target="_blank" rel="noopener noreferrer" className="icon">
+            <img src={icon1} alt="설치 안내" className="icon-img" />
+          </a>
+          <a href="https://blog.naver.com/gripia84" target="_blank" rel="noopener noreferrer" className="icon">
+            <img src={icon2} alt="블로그" className="icon-img" />
+          </a>
+          <a href="https://www.youtube.com/@royce-dental-kr/videos" target="_blank" rel="noopener noreferrer" className="icon">
+            <img src={icon3} alt="유튜브" className="icon-img" />
+          </a>
+        </div>
+      )}
 
       <div className="main-content">
         <section className="feature">
@@ -174,16 +183,26 @@ function Main() {
           </video>
         </div>
         <div className="video-description">
-  <p className="intro-text">20개 로이스치과 네트워크, 하나의 시스템으로 통합 관리!</p>
-  <p className="service-text">
-    통합 A/S 및 관리로 더 빠르고 혁신적인 서비스를 제공하는, 
-    <span className="highlight-text">믿을 수 있는 주치의치과</span> 입니다.
+          <p className="intro-text">20개 로이스치과 네트워크, 하나의 시스템으로 통합 관리!</p>
+          <p className="service-text">
+            통합 A/S 및 관리로 더 빠르고 혁신적인 서비스를 제공하는, 
+            <span className="highlight-text">믿을 수 있는 주치의치과</span> 입니다.
+          </p>
+        </div>
+      </div>
+      <div className="second">
+      <div className="second-content">
+  Difference of the <span className="bold-royce">ROYCE</span>
+  <p className="second-title">로이스치과 네트워크는 신뢰를 바탕으로</p>
+  <p className="second-subtitle">
+    <span className="highlight-text">예측 가능한 진료</span>를 제공합니다.
   </p>
+  <p className='second-bold'>철저한 관리와 헌신 <span className="second-test">으로 환자의 건강과 삶의 질을 향상시키고, 40년 임상 데이터를 통해 최고의 치료 결과를 약속합니다.</span></p>
+  <p className="royce-tv">ROYCE TV</p>
 </div>
+
       </div>
-      <div className="main-footer">
-        <p>&copy; 2025 로이스치과. All Rights Reserved.</p>
-      </div>
+      
     </div>
   );
 }
