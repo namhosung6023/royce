@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import royceLogo from "../images/royce.png";
 import icon1 from "../images/install.png";
 import icon2 from "../images/blog.png";
@@ -9,6 +9,31 @@ import "./Main.css";
 function Main() {
   const [showIcons, setShowIcons] = useState(false);  // 아이콘 보이기/숨기기 상태
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const sliderRef = useRef(null);
+  const scrollSpeed = 2; // 자동 슬라이드 속도
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+
+    if (!slider) return;
+
+    let animationFrame;
+
+    const moveSlider = () => {
+      if (!isPaused) {
+        slider.scrollLeft += scrollSpeed;
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+          slider.scrollLeft = 0; // 끝까지 가면 처음으로
+        }
+      }
+      animationFrame = requestAnimationFrame(moveSlider);
+    };
+
+    moveSlider();
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isPaused]);
   
 
   const handleLogoClick = () => {
@@ -71,13 +96,14 @@ window.addEventListener('scroll', function () {
   ];
 
   const videoLinks = [
-    "Hnmn32nbokY",
+    "iMx9abpmEvQ",
     "1fB9dXDV2jk",
     "Jr5pRYXj5H8",
     "lgwwZxbCFG8",
     "z0_dNx_kjMk",
     "Ru2i0LT0dt4",
     "MjXOM--Vus0",
+    "3_HHmcJfh6I",
   ];
 
   return (

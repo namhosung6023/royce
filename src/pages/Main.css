@@ -616,14 +616,18 @@
   background-color: #0D0D1F;
   color: #856A29; /* 전체 글씨 색상 */
   font-size: 24px; /* 원하는 크기로 조정 */
-  height: 800px;
+  height: 10000px;
+  padding-left: 10%;  /* 왼쪽 간격 추가 */
+  padding-right: 10%; /* 오른쪽 간격 추가 */
 }
+
 
 .second-content {
   display: inline-block;
   color: #856A29;
   font-size: 22px;
-  padding: 0 130px; /* 양옆 여백 추가 */
+  padding-left:130px; /* 양옆 여백 추가 */
+  margin-right: 0px;
   margin-top: 5%;
   
 }
@@ -679,32 +683,32 @@
   font-size: 22px;
 }
 
-.royce-tv{
-  color: #828281;
-  font-weight: bold;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 한 줄에 3개 */
+  grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개 */
   gap: 5px; /* 썸네일 간격 */
-  justify-items: center;
+  justify-items: left;
   margin-top: 20px;
+  background-color: transparent; /* 배경 투명하게 설정 */
 }
 
 .video-thumbnail {
-  width: 100%;
-  max-width: 250px; /* 썸네일 크기 */
+  width: 190%;
+  max-width: 330px; /* 썸네일 크기 */
+  max-height: 290px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  
 }
 
 .video-thumbnail img {
   width: 100%;
-  border-radius: 10px;
+  height: 100%; /* 이미지가 컨테이너 크기에 맞게 늘어남 */
+  border-radius: 1px;
+  object-fit: cover; /* 이미지가 컨테이너에 맞게 크기를 조정하면서 잘리게 함 */
 }
+
+
 
 .video-thumbnail:hover {
   transform: scale(1.05);
@@ -716,14 +720,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.9); /* 배경을 반투명 검정색으로 설정 */
 }
 
+
 .video-popup-content {
-  background: white;
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -740,9 +744,16 @@
   top: 10px;
   right: 15px;
   font-size: 24px;
-  color: white;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
 
 
 
