@@ -8,6 +8,8 @@ import "./Main.css";
 
 function Main() {
   const [showIcons, setShowIcons] = useState(false);  // 아이콘 보이기/숨기기 상태
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  
 
   const handleLogoClick = () => {
     setShowIcons(!showIcons);
@@ -66,6 +68,16 @@ window.addEventListener('scroll', function () {
     { name: "로이스 수원점", url: "http://www.suwon-1st.com/html/main/" },
     { name: "로이스 호치민점", url: "https://roycedental-vn.com/" },
     { name: "로이스 싱가폴점", url: "" },
+  ];
+
+  const videoLinks = [
+    "Hnmn32nbokY",
+    "1fB9dXDV2jk",
+    "Jr5pRYXj5H8",
+    "lgwwZxbCFG8",
+    "z0_dNx_kjMk",
+    "Ru2i0LT0dt4",
+    "MjXOM--Vus0",
   ];
 
   return (
@@ -199,6 +211,27 @@ window.addEventListener('scroll', function () {
   </p>
   <p className='second-bold'>철저한 관리와 헌신 <span className="second-test">으로 환자의 건강과 삶의 질을 향상시키고, 40년 임상 데이터를 통해 최고의 치료 결과를 약속합니다.</span></p>
   <p className="royce-tv">ROYCE TV</p>
+  <div className="video-grid">
+        {videoLinks.map((videoId, index) => (
+          <div key={index} className="video-thumbnail" onClick={() => setSelectedVideo(videoId)}>
+            <img src={`https://img.youtube.com/vi/${videoId}/0.jpg`} alt={`Video ${index + 1}`} />
+          </div>
+        ))}
+      </div>
+      {selectedVideo && (
+        <div className="video-popup" onClick={() => setSelectedVideo(null)}>
+          <div className="video-popup-content">
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${selectedVideo}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
 </div>
 
       </div>
