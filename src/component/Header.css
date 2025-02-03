@@ -48,7 +48,7 @@
 .Header .manageCenter,
 .Header .tv,
 .Header .community {
-  font-size: 1rem; /* 메뉴 항목 크기 */
+  font-size: 1.1rem; /* 메뉴 항목 크기 */
   color: white;
   font-weight: bold;
   cursor: pointer;
