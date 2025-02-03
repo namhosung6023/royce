@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  
 }
 
 /* 비디오 영역 */
@@ -617,8 +618,7 @@
   color: #856A29; /* 전체 글씨 색상 */
   font-size: 24px; /* 원하는 크기로 조정 */
   height: 10000px;
-  padding-left: 10%;  /* 왼쪽 간격 추가 */
-  padding-right: 10%; /* 오른쪽 간격 추가 */
+  
 }
 
 
@@ -626,9 +626,11 @@
   display: inline-block;
   color: #856A29;
   font-size: 22px;
-  padding-left:130px; /* 양옆 여백 추가 */
-  margin-right: 0px;
-  margin-top: 5%;
+  padding: 8.5vh 8.5vw; /* 반응형 패딩 */
+  margin-top: 9vh;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
@@ -684,29 +686,34 @@
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개 */
-  gap: 5px; /* 썸네일 간격 */
-  justify-items: left;
-  margin-top: 20px;
-  background-color: transparent;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 각 줄 사이 간격 */
+}
 
+.video-row {
+  display: flex;
+  justify-content: space-between; /* 썸네일들이 일정하게 배치되도록 */
+  gap: 10px; /* 한 줄에 썸네일 간의 간격을 넓힘 */
 }
 
 .video-thumbnail {
-  width: 190%;
-  max-width: 330px; /* 썸네일 크기 */
-  max-height: 290px;
+  width: 100%;
+  max-width: 330px;
+  aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
-  
 }
 
 .video-thumbnail img {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 

@@ -10,8 +10,17 @@ function Main() {
   const [showIcons, setShowIcons] = useState(false);  // 아이콘 보이기/숨기기 상태
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [slideDirection, setSlideDirection] = useState('left'); // 슬라이드 방향 (왼쪽/오른쪽)
   const sliderRef = useRef(null);
   const scrollSpeed = 2; // 자동 슬라이드 속도
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlideDirection((prevDirection) => (prevDirection === 'left' ? 'right' : 'left'));
+    }, 2000); // 5초마다 슬라이드 방향을 변경 (왼쪽 <-> 오른쪽)
+
+    return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 제거
+  }, []);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -237,13 +246,24 @@ window.addEventListener('scroll', function () {
   </p>
   <p className='second-bold'>철저한 관리와 헌신 <span className="second-test">으로 환자의 건강과 삶의 질을 향상시키고, 40년 임상 데이터를 통해 최고의 치료 결과를 약속합니다.</span></p>
   <p className="royce-tv">ROYCE TV</p>
+  {/* 영상 목록을 두 줄로 나누기 */}
   <div className="video-grid">
-        {videoLinks.map((videoId, index) => (
-          <div key={index} className="video-thumbnail" onClick={() => setSelectedVideo(videoId)}>
-            <img src={`https://img.youtube.com/vi/${videoId}/0.jpg`} alt={`Video ${index + 1}`} />
-          </div>
-        ))}
-      </div>
+    <div className="video-row">
+      {videoLinks.slice(0, 4).map((videoId, index) => (
+        <div key={index} className="video-thumbnail" onClick={() => setSelectedVideo(videoId)}>
+          <img src={`https://img.youtube.com/vi/${videoId}/0.jpg`} alt={`Video ${index + 1}`} />
+        </div>
+      ))}
+    </div>
+
+    <div className="video-row">
+      {videoLinks.slice(4).map((videoId, index) => (
+        <div key={index} className="video-thumbnail" onClick={() => setSelectedVideo(videoId)}>
+          <img src={`https://img.youtube.com/vi/${videoId}/0.jpg`} alt={`Video ${index + 5}`} />
+        </div>
+      ))}
+    </div>
+  </div>
       {selectedVideo && (
         <div className="video-popup" onClick={() => setSelectedVideo(null)}>
           <div className="video-popup-content">
