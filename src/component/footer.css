@@ -5,7 +5,7 @@
     color: white;
     position: relative; 
     bottom: 0;
-    width: 100vw; 
+    width: 100%; 
     min-height: 17vh; 
     font-size: 0.8rem;
     overflow-x: hidden; 
