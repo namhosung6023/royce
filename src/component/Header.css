@@ -11,6 +11,8 @@
   width: 100%;
   background: transparent;
   transition: background-color 0.3s ease-in-out;
+  z-index: 1000;
+  
 }
 
 /* 스크롤 시 배경색 변경 */
@@ -26,6 +28,11 @@
   height: auto;
   margin-left: 0.5vw; /* 로고의 왼쪽 간격 줄이기 */
   margin-right: 28vw; /* 로고의 오른쪽 간격 줄이기 */
+  cursor: pointer;
+}
+
+.Header div {
+  cursor: pointer;
 }
 
 /* 메뉴 스타일 */
@@ -56,7 +63,7 @@
 .Header .manageCenter:hover,
 .Header .tv:hover,
 .Header .community:hover {
-  color: #3498db;
+  color: #856A29;
 }
 
 /* 스크롤 시 글씨 색 변경 */
