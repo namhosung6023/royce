@@ -47,7 +47,7 @@
 }
 
 .contact-form label {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: block; /* 왼쪽 정렬 */
     
 }
@@ -56,9 +56,9 @@
 .contact-form select,
 .contact-form textarea {
     width: 100%;
-    padding: 0.6rem 0; /* 상하 패딩만 주어 밑줄이 돋보이게 합니다 */
+    padding: 0.3rem 0; /* 상하 패딩만 주어 밑줄이 돋보이게 합니다 */
     border: none;
-    border-bottom: 2px solid #ccc; /* 밑줄만 보이도록 설정 */
+    border-bottom: 2px solid #696969; /* 밑줄만 보이도록 설정 */
     font-size: 1rem;
     background: #121220;
     color: white;
@@ -67,7 +67,7 @@
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
-    border-bottom: 2px solid #fff; /* 포커스 시 밑줄 색상 변경 */
+    border-bottom: 2px solid #696969; /* 포커스 시 밑줄 색상 변경 */
     outline: none; /* 기본 포커스 아웃라인 제거 */
 }
 
@@ -86,13 +86,16 @@
 .contact-form button {
     background-color: #0D0D1F;
     color: white;
-    padding: 1.2em;
-    border:1px solid white;
-    border-radius: 20px;
-    font-size: 1rem;
+    padding: 1em;
+    width: 13vh;
+    border: 1px solid white;
+    border-radius: 30px;
+    font-size: 0.8em;
     cursor: pointer;
+    margin-top: 7vh;
     align-self: center; /* 왼쪽 정렬 */
     margin-bottom: 20vh;
+    letter-spacing: 2px;
 }
 
 .contact-form button:hover {
