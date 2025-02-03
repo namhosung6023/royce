@@ -12,7 +12,6 @@
   background: transparent;
   transition: background-color 0.3s ease-in-out;
   z-index: 1000;
-  
 }
 
 /* 스크롤 시 배경색 변경 */
@@ -23,7 +22,7 @@
 
 /* 로고 스타일 */
 .Header .logo {
-  width: 100vw; /* 로고 크기를 조금 줄여서 간격을 좁힘 */
+  width: 15vw; /* 로고 크기를 조금 줄여서 간격을 좁힘 */
   max-width: 300px;
   height: auto;
   margin-left: 0.5vw; /* 로고의 왼쪽 간격 줄이기 */
@@ -49,7 +48,7 @@
 .Header .manageCenter,
 .Header .tv,
 .Header .community {
-  font-size: 1.3rem; /* 메뉴 항목 크기 */
+  font-size: 1rem; /* 메뉴 항목 크기 */
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -84,7 +83,7 @@
   }
 
   .Header .logo {
-    width: 30vw; /* 로고 크기 줄이기 */
+    width: 20vw; /* 로고 크기 줄이기 */
     max-width: 250px; /* 최대 크기 제한 */
     margin-left: 2vw; /* 로고 왼쪽 간격 줄이기 */
     margin-right: 20vw; /* 로고 오른쪽 간격 줄이기 */
@@ -152,5 +151,21 @@
   .Header .tv,
   .Header .community {
     font-size: 0.9rem; /* 폰트 크기 더 줄이기 */
+  }
+}
+
+/* 추가적인 미디어 쿼리 */
+/* 모바일 화면에서 메뉴 아이템 간격과 크기 조정 */
+@media (max-width: 320px) {
+  .Header .menu {
+    gap: 1.5vh; /* 메뉴 항목 간격 축소 */
+  }
+
+  .Header .introduce,
+  .Header .special,
+  .Header .manageCenter,
+  .Header .tv,
+  .Header .community {
+    font-size: 0.8rem; /* 폰트 크기 더 줄이기 */
   }
 }
