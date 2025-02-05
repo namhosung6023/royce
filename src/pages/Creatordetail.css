@@ -1,0 +1,43 @@
+.creatordetail {
+    display: flex; /* Flexbox 활성화 */
+    flex-direction: column; /* 세로로 정렬 */
+    justify-content: flex-start; /* 위에서부터 차례대로 배치 */
+    align-items: left; 
+    padding: 120px; /* div의 여백 */
+    background-color: #0D0D1F;
+    color: white;
+  }
+
+  .title-royce {
+    font-size: 64px;
+    font-weight: bold;
+  }
+
+  .youtube-icon{
+    font-size: 24px;
+    margin-bottom: 100px;
+  }
+
+  .intro-section p span {
+    font-size: 42px;
+  }
+
+  .intro-section p {
+    font-size: 28px;
+  }
+
+  .scroll-down-context{
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .content-section-title{
+    font-size: 21px;
+  }
+
+
+  .tag-context{
+    font-size: 82px;
+    font-weight: bold;
+    color: #3B3B3B;
+  }
